@@ -39,7 +39,6 @@ date
 
 mkdir mydirectory
 
-
 ### Question 4:  What are the last 5 commands you have in your history
 ```{bash}
 history | tail -5
@@ -57,9 +56,6 @@ Above - the markdown asterisk is just to show you that its on its own line. Plea
 
 ```{bash}
 $ cat > numbers.txt 
-```
-
-```{bash}
 echo "1234" >> numbers.txt 
 echo "12121" >> numbers.txt
 echo "3434" >> numbers.txt
