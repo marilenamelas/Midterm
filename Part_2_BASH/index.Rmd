@@ -57,6 +57,9 @@ Above - the markdown asterisk is just to show you that its on its own line. Plea
 
 ```{bash}
 $ cat > numbers.txt 
+```
+
+```{bash}
 echo "1234" >> numbers.txt 
 echo "12121" >> numbers.txt
 echo "3434" >> numbers.txt
@@ -141,8 +144,9 @@ history | head -5
 
 ### Question 18: What is the first line of a BASH script?
 
+```{bash}
 #!/bin/bash
-
+```
 
 <!-- The text below is just to reformat the page, using css styling -->
 ```{r results="asis", echo = FALSE}
