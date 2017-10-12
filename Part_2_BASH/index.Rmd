@@ -93,7 +93,9 @@ chmod u=rw numbers.txt
 ```
 ### Question 10:   Please make that file 'numbers.txt' such that you can read and write to it, and everyone else on the computer both world and group can just read it.
 
+```{bash}
 chmod u=rw, o=r, g=r numbers.txt 
+```
 
 ### Question 11:  Please scrape or download the information behind the gene PTEN into a file from this web-page:
 https://ghr.nlm.nih.gov/gene/PTEN
