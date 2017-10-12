@@ -144,9 +144,8 @@ history | head -5
 
 ### Question 18: What is the first line of a BASH script?
 
-```{bash}
 #!/bin/bash
-```
+
 
 <!-- The text below is just to reformat the page, using css styling -->
 ```{r results="asis", echo = FALSE}
