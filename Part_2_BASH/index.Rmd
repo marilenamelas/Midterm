@@ -82,9 +82,7 @@ wc -l numbers.txt
 
 ### Question 8: Please create a sed command (e.g. sed 's/match/replace/g' numbers.txt) to commify the list of numbers in thousands place to the screen.  For example: 1,234 or 12,121
 
-```{bash}
 sed -e :a -e 's/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;ta' numbers.txt
-```
 
 ### Question 9:  Please make the 'numbers.txt' file private such that only you can read and write it.  Nobody at the group level can read it, write or execute it.
 
