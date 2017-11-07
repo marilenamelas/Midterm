@@ -1,0 +1,79 @@
+
+```{r echo=FALSE}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+  fluidRow(
+    column(2,
+      radioButtons("colorscale", "colorscale:",
+               c("BrBG" = "BrBG",
+                 "Dark2" = "Dark2",
+                 "BuGn" = "BuGn")),        
+         radioButtons("xaxis", "X-axis:",
+               c("color" = "Species",
+                 "Sepal.Length" = "Sepal.Length",
+                 "Sepal.Width" = "Sepal.Width",
+                 "Petal.Length" = "Petal.Length",
+                 "Petal.Width" = "Petal.Width")),
+         radioButtons("yaxis", "Y-axis:",
+               c("Sepal.Length" = "Sepal.Length",
+                 "Sepal.Width" = "Sepal.Width",
+                 "Petal.Length" = "Petal.Length",
+                 "Petal.Width" = "Petal.Width")),      
+         radioButtons("color", "Color-axis:",
+                 c("color" = "Species",
+                   "Sepal.Width" = "Sepal.Width",
+                   "Sepal.Length" = "Sepal.Length",
+                   "Petal.Length" = "Petal.Length",
+                   "Petal.Width" = "Petal.Width"))
+    ),
+    column(10,
+      plotOutput("distPlot")
+    )
+  )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+
+   output$distPlot <- renderPlot({
+      iris    <- iris
+      xaxis<-input$xaxis
+      yaxis<-input$yaxis
+      zaxis<-input$color
+      cbrewer<-input$colorscale
+      ggplot(iris, aes_string(x=xaxis, y=yaxis)) + geom_violin(aes_string(fill = zaxis))
+   })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+
+
+
+
+<!-- The text below is just to reformat the page, using css styling -->
+```{r results="asis", echo = FALSE}
+cat("
+<style>
+h1 {
+    background-color: #990000;
+    color:#FFF;
+    text-align:center;
+}
+h2 {
+   background-color:#f3d6d6;
+   text-align:center;
+   color:#333
+}
+h3 {
+   margin-left:-5px;
+   color:#333
+}
+
+</style>
+")
+```
